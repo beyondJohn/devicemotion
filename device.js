@@ -1,19 +1,23 @@
 (function () {
     var jumpMax = {};
+
     if (window.DeviceOrientationEvent) {
         window.addEventListener('deviceorientation', deviceOrientationHandler, false);
         document.getElementById("doeSupported").innerText = "Supported!";
     }
+
     if (window.DeviceMotionEvent) {
         window.addEventListener('devicemotion', deviceMotionHandler);
         setTimeout(stopJump, 3 * 1000);
     }
+
     function deviceOrientationHandler(event) {
         var absolute = event.absolute;
         var alpha = event.alpha;
         var beta = event.beta;
         var gamma = event.gamma;
     }
+    
     function handleMotionEvent(event) {
 
         var x = event.accelerationIncludingGravity.x;
